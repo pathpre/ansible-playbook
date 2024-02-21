@@ -11,7 +11,6 @@ There are four managed nodes:
 servera.lab.example.com
 serverb.lab.example.com
 serverc.lab.example.com
+serverd.lab.example.com
 
 A user called 'student' exists on all the control and managed nodes.
-
-Testing out pushing on git from a VM.
