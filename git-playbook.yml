@@ -1,0 +1,7 @@
+---
+- name: Pushing Files onto git
+  hosts: all
+  tasks:
+  - name: Git Add
+    git:
+     repo: 
