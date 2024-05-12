@@ -1,0 +1,16 @@
+---
+- name: "copying test files in a different location and deleting the original"
+  hosts: all
+  tasks:
+###  - name: Copying files
+###    copy:
+###     src: /home/student/ansible-playbook/basic-playbooks/test/
+###     dest: /home/student/
+  - name: Deleting older directory recursively
+    file:
+     path: /home/student/ansible-playbooks/
+     state: absent
+  - name: delete a file
+    file:
+     path: /home/student/test_text.txt
+     state: absent

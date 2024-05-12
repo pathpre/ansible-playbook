@@ -1,0 +1,8 @@
+---
+- name: User Management
+  hosts: all
+  tasks:
+   - name: Create User Cat
+     user:
+      name: cat
+      state: present

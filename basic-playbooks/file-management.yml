@@ -1,11 +1,20 @@
 ---
-- name: File manipulation on target hosts
+- name: File manipulation on target hosts using the file and copy modules
   hosts: all
   tasks:
-   - name: Create a file if it does not exist
+   - name: Create a directory if it does not exist
      file:
-      path: /home/student/
+      path: /home/student/ansible-playbook/basic-playbooks/test
       state: directory
       mode: 0755
       owner: student
       group: student
+   - name: Create a new text file inside the directory created
+     copy:
+      dest: /home/student/ansible-playbook/basic-playbooks/test/test_text.txt
+      content: "This is the first text file created by an ansible playbook"
+      mode: 0777
+   - name: Using the file module to crete a file
+     file:
+      path: /home/student/ansible-playbook/basic-playbooks/test
+      state: touch
