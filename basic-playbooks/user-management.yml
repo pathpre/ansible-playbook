@@ -1,8 +1,21 @@
 ---
 - name: User Management
   hosts: all
+  become: true
   tasks:
-   - name: Create User Cat
+   - name: Create User CAT
+     user:
+      name: CAT
+      state: present
+      shell: /bin/bash
+   - name: Create user TEST1
+     user:
+      name: TEST1
+      state: present
+      group: student
+   - name: Delete user cat
      user:
       name: cat
-      state: present
+      uid: 1002
+      state: absent
+      remove: yes
